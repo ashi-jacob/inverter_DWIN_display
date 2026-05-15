@@ -80,35 +80,38 @@ void hal_entry(void)
     R_SCI_UART_Open(&g_uart4_ctrl, &g_uart4_cfg);
 
     /* Startup delay */
-    uint8_t curve_packet[7] = {0x5A, 0xA5, 0x05, 0x84, 0x01, 0x00, 0x00};
+    R_BSP_SoftwareDelay(100, BSP_DELAY_UNITS_MILLISECONDS);
 
-    uint16_t sensor_value = 0;
-    bool increasing = true;
-
+    uint8_t curve_cmd[] =
+    {
+        0x5A, 0xA5, // Header
+        0x06,       // Length: 0x84(1) + Channel(1) + VP(2) + Data(2) = 6 bytes
+        0x84,       // Command: Write Curve
+        0x00,       // Curve Channel (Usually 0 for the first curve)
+        0x10, 0x00, // VP Address (Matches your DGUS setting, e.g., 1000)
+        0x00, 0x64  // Data (0x64 = 100 decimal)
+    };
+    uint16_t curve_value = 100; // Start at 100
+    uint8_t curve_cmd[8] = { 0x5A, 0xA5, 0x06, 0x84, 0x00, 0x10, 0x00, 0x00 };
 
     while(1)
     {
-        // 1. Prepare the data (Big Endian)
-        // We update bytes 5 and 6 of our packet
-        curve_packet[5] = (uint8_t)(sensor_value >> 8);   // High Byte
-        curve_packet[6] = (uint8_t)(sensor_value & 0xFF); // Low Byte
+        // Update the data bytes in the array (Big Endian)
+        curve_cmd[6] = (uint8_t)(curve_value >> 8);   // High byte
+        curve_cmd[7] = (uint8_t)(curve_value & 0xFF); // Low byte
 
-        // 2. Transmit via UART
         uart_tx_complete = false;
-        R_SCI_UART_Write(&g_uart4_ctrl, curve_packet, sizeof(curve_packet));
+        R_SCI_UART_Write(&g_uart4_ctrl, curve_cmd, sizeof(curve_cmd));
         while(!uart_tx_complete);
 
-        // 3. Simple logic to oscillate the value between 0 and 200
-        if (increasing) {
-            sensor_value += 5;
-            if (sensor_value >= 200) increasing = false;
+        // Decrease the value
+        if (curve_value > 0) {
+            curve_value--;
         } else {
-            sensor_value -= 5;
-            if (sensor_value <= 0) increasing = true;
+            curve_value = 100; // Reset to 100 when it hits 0
         }
 
-        // 4. Refresh rate (approx 20 frames per second)
-        R_BSP_SoftwareDelay(50, BSP_DELAY_UNITS_MILLISECONDS);
+        R_BSP_SoftwareDelay(100, BSP_DELAY_UNITS_MILLISECONDS); // Faster update for smooth curve
     }
 #if BSP_TZ_SECURE_BUILD
     R_BSP_NonSecureEnter();

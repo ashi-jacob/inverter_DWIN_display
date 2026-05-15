@@ -29,3 +29,64 @@ arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
    5624	     12	   1604	   7240	   1c48	inverter_display.elf
+Extracting support files...
+19:20:29 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+arm-none-eabi-size --format=berkeley "inverter_display.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5624	     12	   1604	   7240	   1c48	inverter_display.elf
+Extracting support files...
+19:24:16 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+arm-none-eabi-size --format=berkeley "inverter_display.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5624	     12	   1604	   7240	   1c48	inverter_display.elf
+Extracting support files...
+19:26:00 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/hal_entry.c
+Building target: inverter_display.elf
+arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
+arm-none-eabi-size --format=berkeley "inverter_display.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5544	     12	   1604	   7160	   1bf8	inverter_display.elf
+Extracting support files...
+19:44:57 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/hal_entry.c
+Building target: inverter_display.elf
+arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
+arm-none-eabi-size --format=berkeley "inverter_display.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5544	     12	   1604	   7160	   1bf8	inverter_display.elf
+Extracting support files...
+19:48:52 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/hal_entry.c
+../src/hal_entry.c: In function 'hal_entry':
+../src/hal_entry.c:95:13: error: conflicting types for 'curve_cmd'
+   95 |     uint8_t curve_cmd[8] = { 0x5A, 0xA5, 0x06, 0x84, 0x00, 0x10, 0x00, 0x00 };
+      |             ^~~~~~~~~
+../src/hal_entry.c:85:13: note: previous definition of 'curve_cmd' was here
+   85 |     uint8_t curve_cmd[] =
+      |             ^~~~~~~~~
+make: *** [src/subdir.mk:19: src/hal_entry.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+Extracting support files...
+19:51:55 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/hal_entry.c
+Building target: inverter_display.elf
+arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
+arm-none-eabi-size --format=berkeley "inverter_display.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5564	     12	   1604	   7180	   1c0c	inverter_display.elf
+Extracting support files...
+20:01:15 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/hal_entry.c
+Building target: inverter_display.elf
+arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
+arm-none-eabi-size --format=berkeley "inverter_display.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5588	     12	   1604	   7204	   1c24	inverter_display.elf
