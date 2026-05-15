@@ -4793,3 +4793,30 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 !ENTRY org.apache.log4j 2 0 2026-05-15 11:22:19.010
 !MESSAGE org.apache.http.client.protocol.ResponseProcessCookies  - Invalid cookie header: "set-cookie: __cf_bm=yxPwt5vj7qeSJsdmxydKVZvuB9XoXHf44isMdiwxNnw-1778824337.792254-1.0.1.1-9.xat.nPddTdQwi3Y452w9vO62aStz2IFAm8swGzdA2JH6Y6HUPKSTKFIXjc5hKK0hZ2fwI6.KCATBZOJCvbZ4lyy36kWyTIMV.EjZryjXCRAyZpNLZGLBT6LbgbyRsO; HttpOnly; SameSite=None; Secure; Path=/; Domain=www2.renesas.eu; Expires=Fri, 15 May 2026 06:22:17 GMT". Invalid 'expires' attribute: Fri, 15 May 2026 06:22:17 GMT
 
+
+!ENTRY com.renesas.cdt.dsf.gdb 4 0 2026-05-15 11:24:30.882
+!MESSAGE Timeout occured getting GDB port number
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+	at com.renesas.cdt.dsf.gdb.service.GDBServerService.createServerProcess(GDBServerService.java:220)
+	at com.renesas.cdt.launch.dsf.gdbremote.ReGdbRemoteDSFinalLaunchSequence_7_2.startServerProcess(ReGdbRemoteDSFinalLaunchSequence_7_2.java:338)
+	at com.renesas.cdt.launch.dsf.gdbremote.ReGdbRemoteDSFinalLaunchSequence_7_2.stepLaunchServer(ReGdbRemoteDSFinalLaunchSequence_7_2.java:257)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.cdt.dsf.concurrent.ReflectionSequence$ReflectionStep.execute(ReflectionSequence.java:160)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.executeStep(Sequence.java:475)
+	at org.eclipse.cdt.dsf.concurrent.Sequence$2.handleSuccess(Sequence.java:437)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:391)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY com.renesas.cdt.dsf.gdb 4 0 2026-05-15 11:24:30.904
+!MESSAGE GDB port number not retrieved from console

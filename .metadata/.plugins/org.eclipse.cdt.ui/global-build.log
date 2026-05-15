@@ -90,3 +90,12 @@ arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
    5588	     12	   1604	   7204	   1c24	inverter_display.elf
+Extracting support files...
+11:23:54 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/hal_entry.c
+Building target: inverter_display.elf
+arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
+arm-none-eabi-size --format=berkeley "inverter_display.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5544	     12	   1604	   7160	   1bf8	inverter_display.elf
