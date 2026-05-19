@@ -33,9 +33,9 @@ void hal_entry(void)
     };
 
     // Tracking variables to oscillate values within your screen's visible bounds
-    uint16_t point1_val = 40;
-    uint16_t point2_val = 60;
-    bool counting_up = true;
+//    uint16_t point1_val = 40;
+//    uint16_t point2_val = 40;
+//    bool counting_up = true;
 
     /* Open UART Driver */
     R_SCI_UART_Open(&g_uart4_ctrl, &g_uart4_cfg);
@@ -47,31 +47,31 @@ void hal_entry(void)
     {
         // 1. Zigzag Generation Math Engine
         // Moves the data points up and down smoothly between 35 and 65 (safely wrapping your 50 reference center)
-        if (counting_up)
-        {
-            point1_val += 2;
-            point2_val += 2;
-            if (point2_val >= 65)
-            {
-                counting_up = false; // hit peak, shift direction down
-            }
-        }
-        else
-        {
-            point1_val -= 2;
-            point2_val -= 2;
-            if (point1_val <= 35)
-            {
-                counting_up = true; // hit floor, shift direction up
-            }
-        }
+//        if (counting_up)
+//        {
+//            point1_val += 2;
+//            point2_val += 2;
+//            if (point2_val >= 65)
+//            {
+//                counting_up = false; // hit peak, shift direction down
+//            }
+//        }
+//        else
+//        {
+//            point1_val -= 2;
+//            point2_val -= 2;
+//            if (point1_val <= 35)
+//            {
+//                counting_up = true; // hit floor, shift direction up
+//            }
+//        }
 
         // 2. Parse 16-bit variables into the 8-bit Big Endian UART packet
-        command[12] = (uint8_t)((point1_val >> 8) & 0xFF);
-        command[13] = (uint8_t)(point1_val & 0xFF);
-
-        command[14] = (uint8_t)((point2_val >> 8) & 0xFF);
-        command[15] = (uint8_t)(point2_val & 0xFF);
+//        command[12] = (uint8_t)((point1_val >> 8) & 0xFF);
+//        command[13] = (uint8_t)(point1_val & 0xFF);
+//
+//        command[14] = (uint8_t)((point2_val >> 8) & 0xFF);
+//        command[15] = (uint8_t)(point2_val & 0xFF);
 
         // 3. Clear callback check flag and fire the data frame out
         uart_tx_complete = false;

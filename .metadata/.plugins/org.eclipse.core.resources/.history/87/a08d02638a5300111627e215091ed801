@@ -34,7 +34,7 @@ void hal_entry(void)
 
     // Tracking variables to oscillate values within your screen's visible bounds
     uint16_t point1_val = 40;
-    uint16_t point2_val = 60;
+    uint16_t point2_val = 42;
     bool counting_up = true;
 
     /* Open UART Driver */

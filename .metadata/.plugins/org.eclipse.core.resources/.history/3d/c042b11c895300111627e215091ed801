@@ -21,7 +21,7 @@ void hal_entry(void)
     static uint8_t command[] = {
         0x5A, 0xA5,  // Frame header
         0x0D,        // Data length (13 bytes follow)
-        0x82,        // Write instruction
+        0x84,        // Write instruction
         0x03, 0x10,  // Curve fixed address
         0x5A, 0xA5,  // Curve Buffer Init command
         0x01, 0x00,  // 1 channel active

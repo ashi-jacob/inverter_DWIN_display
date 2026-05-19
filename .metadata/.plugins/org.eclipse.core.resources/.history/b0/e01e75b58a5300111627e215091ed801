@@ -34,7 +34,7 @@ void hal_entry(void)
 
     // Tracking variables to oscillate values within your screen's visible bounds
     uint16_t point1_val = 40;
-    uint16_t point2_val = 60;
+    uint16_t point2_val = 40;
     bool counting_up = true;
 
     /* Open UART Driver */
@@ -67,11 +67,11 @@ void hal_entry(void)
         }
 
         // 2. Parse 16-bit variables into the 8-bit Big Endian UART packet
-        command[12] = (uint8_t)((point1_val >> 8) & 0xFF);
-        command[13] = (uint8_t)(point1_val & 0xFF);
-
-        command[14] = (uint8_t)((point2_val >> 8) & 0xFF);
-        command[15] = (uint8_t)(point2_val & 0xFF);
+//        command[12] = (uint8_t)((point1_val >> 8) & 0xFF);
+//        command[13] = (uint8_t)(point1_val & 0xFF);
+//
+//        command[14] = (uint8_t)((point2_val >> 8) & 0xFF);
+//        command[15] = (uint8_t)(point2_val & 0xFF);
 
         // 3. Clear callback check flag and fire the data frame out
         uart_tx_complete = false;

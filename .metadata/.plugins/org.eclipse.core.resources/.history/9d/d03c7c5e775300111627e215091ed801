@@ -1,0 +1,98 @@
+#include "hal_data.h"
+
+FSP_CPP_HEADER
+void R_BSP_WarmStart(bsp_warm_start_event_t event);
+FSP_CPP_FOOTER
+
+volatile bool uart_tx_complete = false;
+
+/* UART Callback */
+void user_uart_callback(uart_callback_args_t * p_args)
+{
+    if (p_args->event == UART_EVENT_TX_COMPLETE)
+    {
+        uart_tx_complete = true;
+    }
+}
+
+void hal_entry(void)
+{
+    // Exact structural packet layout matching your datasheet example
+    static uint8_t command[] = {
+        0x5A, 0xA5,  // Frame header
+        0x0D,        // Data length (13 bytes follow)
+        0x82,        // Write instruction
+        0x03, 0x10,  // Curve engine fixed address
+        0x5A, 0xA5,  // Curve Buffer Init signature
+        0x01, 0x00,  // 1 active channel
+        0x00, 0x02,  // Channel 00, sending 2 points at a time
+
+        0x00, 0x00,  // Point 1 High, Low Byte
+        0x00, 0x00   // Point 2 High, Low Byte
+    };
+
+    // Safe, bounded mock values cycling around a baseline of 0
+    int16_t wave_point_1 = -10;
+    int16_t wave_point_2 = 10;
+    bool climbing = true;
+
+    /* Initialize Renesas UART Driver */
+    R_SCI_UART_Open(&g_uart4_ctrl, &g_uart4_cfg);
+
+    // Crucial startup delay: Give the screen 3 full seconds to initialize
+    // its background canvas before throwing data at it.
+    R_BSP_SoftwareDelay(3, BSP_DELAY_UNITS_SECONDS);
+
+    while(1)
+    {
+        // Simple triangular wave generator tracking up and down smoothly
+        if (climbing) {
+            wave_point_1 += 2;
+            wave_point_2 += 2;
+            if (wave_point_2 >= 30) {
+                climbing = false;
+            }
+        } else {
+            wave_point_1 -= 2;
+            wave_point_2 -= 2;
+            if (wave_point_1 <= -30) {
+                climbing = true;
+            }
+        }
+
+        // Convert the signed 16-bit integers safely into our big-endian byte array
+        command[12] = (uint8_t)((wave_point_1 >> 8) & 0xFF);
+        command[13] = (uint8_t)(wave_point_1 & 0xFF);
+
+        command[14] = (uint8_t)((wave_point_2 >> 8) & 0xFF);
+        command[15] = (uint8_t)(wave_point_2 & 0xFF);
+
+        // Fire the clean data frame out to your display
+        uart_tx_complete = false;
+        R_SCI_UART_Write(&g_uart4_ctrl, command, sizeof(command));
+
+        // Use a safe hardware-level delay window to protect the screen buffer
+        R_BSP_SoftwareDelay(200, BSP_DELAY_UNITS_MILLISECONDS);
+    }
+
+#if BSP_TZ_SECURE_BUILD
+    R_BSP_NonSecureEnter();
+#endif
+}
+
+void R_BSP_WarmStart(bsp_warm_start_event_t event)
+{
+    if (BSP_WARM_START_RESET == event)
+    {
+#if BSP_FEATURE_FLASH_LP_VERSION != 0
+        /* Enable reading from data flash. */
+        R_FACI_LP->DFLCTL = 1U;
+#endif
+    }
+
+    if (BSP_WARM_START_POST_C == event)
+    {
+        /* Configure pins. */
+        R_IOPORT_Open (&g_ioport_ctrl, g_ioport.p_cfg);
+    }
+}
