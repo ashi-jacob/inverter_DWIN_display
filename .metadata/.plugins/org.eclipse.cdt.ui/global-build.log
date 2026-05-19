@@ -1,101 +1,133 @@
 Extracting support files...
-15:07:03 **** Build of configuration Debug for project inverter_display ****
-make -j16 all 
-Building file: ../src/hal_entry.c
-Building file: ../ra_gen/common_data.c
-Building file: ../ra_gen/hal_data.c
-Building file: ../ra_gen/main.c
-Building file: ../ra_gen/pin_data.c
-Building file: ../ra_gen/vector_data.c
-Building file: ../ra/fsp/src/r_sci_uart/r_sci_uart.c
-Building file: ../ra/fsp/src/r_ioport/r_ioport.c
-Building file: ../ra/fsp/src/bsp/mcu/all/bsp_clocks.c
-Building file: ../ra/fsp/src/bsp/mcu/all/bsp_common.c
-Building file: ../ra/fsp/src/bsp/mcu/all/bsp_delay.c
-Building file: ../ra/fsp/src/bsp/mcu/all/bsp_group_irq.c
-Building file: ../ra/fsp/src/bsp/mcu/all/bsp_guard.c
-Building file: ../ra/fsp/src/bsp/mcu/all/bsp_io.c
-Building file: ../ra/fsp/src/bsp/mcu/all/bsp_irq.c
-Building file: ../ra/fsp/src/bsp/mcu/all/bsp_register_protection.c
-Building file: ../ra/fsp/src/bsp/mcu/all/bsp_rom_registers.c
-Building file: ../ra/fsp/src/bsp/mcu/all/bsp_sbrk.c
-Building file: ../ra/fsp/src/bsp/mcu/all/bsp_security.c
-Building file: ../ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/startup.c
-Building file: ../ra/fsp/src/bsp/cmsis/Device/RENESAS/Source/system.c
-Building file: ../ra/board/ra6m4_ek/board_init.c
-Building file: ../ra/board/ra6m4_ek/board_leds.c
-Building target: inverter_display.elf
-arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
-arm-none-eabi-size --format=berkeley "inverter_display.elf"
-   text	   data	    bss	    dec	    hex	filename
-   5624	     12	   1604	   7240	   1c48	inverter_display.elf
-Extracting support files...
-19:20:29 **** Incremental Build of configuration Debug for project inverter_display ****
+12:57:14 **** Incremental Build of configuration Debug for project inverter_display ****
 make -j16 all 
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
-   5624	     12	   1604	   7240	   1c48	inverter_display.elf
+   5540	     12	   1604	   7156	   1bf4	inverter_display.elf
 Extracting support files...
-19:24:16 **** Incremental Build of configuration Debug for project inverter_display ****
-make -j16 all 
-arm-none-eabi-size --format=berkeley "inverter_display.elf"
-   text	   data	    bss	    dec	    hex	filename
-   5624	     12	   1604	   7240	   1c48	inverter_display.elf
-Extracting support files...
-19:26:00 **** Incremental Build of configuration Debug for project inverter_display ****
+12:59:13 **** Incremental Build of configuration Debug for project inverter_display ****
 make -j16 all 
 Building file: ../src/hal_entry.c
 Building target: inverter_display.elf
 arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
-   5544	     12	   1604	   7160	   1bf8	inverter_display.elf
+   5540	     12	   1604	   7156	   1bf4	inverter_display.elf
 Extracting support files...
-19:44:57 **** Incremental Build of configuration Debug for project inverter_display ****
+13:04:39 **** Incremental Build of configuration Debug for project inverter_display ****
 make -j16 all 
 Building file: ../src/hal_entry.c
 Building target: inverter_display.elf
 arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
-   5544	     12	   1604	   7160	   1bf8	inverter_display.elf
+   5572	     12	   1604	   7188	   1c14	inverter_display.elf
 Extracting support files...
-19:48:52 **** Incremental Build of configuration Debug for project inverter_display ****
+13:28:26 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/hal_entry.c
+Building target: inverter_display.elf
+arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
+arm-none-eabi-size --format=berkeley "inverter_display.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5616	     28	   1604	   7248	   1c50	inverter_display.elf
+Extracting support files...
+13:29:26 **** Incremental Build of configuration Debug for project inverter_display ****
 make -j16 all 
 Building file: ../src/hal_entry.c
 ../src/hal_entry.c: In function 'hal_entry':
-../src/hal_entry.c:95:13: error: conflicting types for 'curve_cmd'
-   95 |     uint8_t curve_cmd[8] = { 0x5A, 0xA5, 0x06, 0x84, 0x00, 0x10, 0x00, 0x00 };
-      |             ^~~~~~~~~
-../src/hal_entry.c:85:13: note: previous definition of 'curve_cmd' was here
-   85 |     uint8_t curve_cmd[] =
-      |             ^~~~~~~~~
-make: *** [src/subdir.mk:19: src/hal_entry.o] Error 1
-"make -j16 all" terminated with exit code 2. Build might be incomplete.
+../src/hal_entry.c:39:13: warning: unused variable 'init_cmd' [-Wunused-variable]
+   39 |     uint8_t init_cmd[] =
+      |             ^~~~~~~~
+Building target: inverter_display.elf
+arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
+arm-none-eabi-size --format=berkeley "inverter_display.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5540	     12	   1604	   7156	   1bf4	inverter_display.elf
 Extracting support files...
-19:51:55 **** Incremental Build of configuration Debug for project inverter_display ****
+13:30:00 **** Incremental Build of configuration Debug for project inverter_display ****
 make -j16 all 
 Building file: ../src/hal_entry.c
 Building target: inverter_display.elf
 arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
-   5564	     12	   1604	   7180	   1c0c	inverter_display.elf
+   5540	     12	   1604	   7156	   1bf4	inverter_display.elf
 Extracting support files...
-20:01:15 **** Incremental Build of configuration Debug for project inverter_display ****
+13:43:07 **** Incremental Build of configuration Debug for project inverter_display ****
 make -j16 all 
 Building file: ../src/hal_entry.c
 Building target: inverter_display.elf
 arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
-   5588	     12	   1604	   7204	   1c24	inverter_display.elf
+   4644	      8	   1608	   6260	   1874	inverter_display.elf
 Extracting support files...
-11:23:54 **** Incremental Build of configuration Debug for project inverter_display ****
+13:51:00 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+arm-none-eabi-size --format=berkeley "inverter_display.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4644	      8	   1608	   6260	   1874	inverter_display.elf
+Extracting support files...
+13:52:26 **** Incremental Build of configuration Debug for project inverter_display ****
 make -j16 all 
 Building file: ../src/hal_entry.c
 Building target: inverter_display.elf
 arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
-   5544	     12	   1604	   7160	   1bf8	inverter_display.elf
+   4644	      8	   1608	   6260	   1874	inverter_display.elf
+Extracting support files...
+13:53:24 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/hal_entry.c
+Building target: inverter_display.elf
+arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
+arm-none-eabi-size --format=berkeley "inverter_display.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5540	     12	   1604	   7156	   1bf4	inverter_display.elf
+Extracting support files...
+14:01:24 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/hal_entry.c
+../src/hal_entry.c: In function 'hal_entry':
+../src/hal_entry.c:62:13: warning: conversion from 'int' to 'unsigned char' may change value [-Wconversion]
+   62 |             (value >> 8) & 0xFF,
+      |             ^
+../src/hal_entry.c:63:13: warning: conversion from 'int' to 'unsigned char' may change value [-Wconversion]
+   63 |             value & 0xFF
+      |             ^~~~~
+Building target: inverter_display.elf
+arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
+arm-none-eabi-size --format=berkeley "inverter_display.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5576	     28	   1604	   7208	   1c28	inverter_display.elf
+Extracting support files...
+14:03:44 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/hal_entry.c
+../src/hal_entry.c: In function 'hal_entry':
+../src/hal_entry.c:80:13: warning: conversion from 'int' to 'unsigned char' may change value [-Wconversion]
+   80 |             (value >> 8) & 0xFF,
+      |             ^
+../src/hal_entry.c:81:13: warning: conversion from 'int' to 'unsigned char' may change value [-Wconversion]
+   81 |             value & 0xFF
+      |             ^~~~~
+../src/hal_entry.c: At top level:
+../src/hal_entry.c:101:6: warning: no previous declaration for 'R_BSP_WarmStart' [-Wmissing-declarations]
+  101 | void R_BSP_WarmStart(bsp_warm_start_event_t event)
+      |      ^~~~~~~~~~~~~~~
+Building target: inverter_display.elf
+arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
+arm-none-eabi-size --format=berkeley "inverter_display.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5648	     28	   1604	   7280	   1c70	inverter_display.elf
+Extracting support files...
+15:27:53 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/hal_entry.c
+Building target: inverter_display.elf
+arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
+arm-none-eabi-size --format=berkeley "inverter_display.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5536	     12	   1604	   7152	   1bf0	inverter_display.elf
