@@ -1,11 +1,8 @@
-19:28:35 **** Incremental Build of configuration Debug for project inverter_display ****
+18:34:01 **** Incremental Build of configuration Debug for project inverter_display ****
 make -j16 all 
-Building file: ../src/hal_entry.c
-Building target: inverter_display.elf
-arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
-   5608	     28	   1604	   7240	   1c48	inverter_display.elf
+   5956	    100	   1604	   7660	   1dec	inverter_display.elf
 
-19:28:36 Build Finished. 0 errors, 0 warnings. (took 867ms)
+18:34:01 Build Finished. 0 errors, 0 warnings. (took 387ms)
 

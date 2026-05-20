@@ -1,4 +1,7 @@
 #include "hal_data.h"
+#include "bar_graph.h"
+#include "graph.h"
+#include "value.h"
 
 FSP_CPP_HEADER
 void R_BSP_WarmStart(bsp_warm_start_event_t event);
@@ -7,87 +10,65 @@ FSP_CPP_FOOTER
 volatile bool uart_tx_complete = false;
 
 /* UART Callback */
-void user_uart_callback(uart_callback_args_t * p_args)
+void user_uart_callback(uart_callback_args_t *p_args)
 {
     if (p_args->event == UART_EVENT_TX_COMPLETE)
     {
-        uart_tx_complete = true;
+        uart_tx_complete = true;                               //for proper txing
     }
 }
 
 void hal_entry(void)
 {
-    // Exact structure matching your datasheet example
-    static uint8_t command[] = {
-        0x5A, 0xA5,  // Frame header
-        0x0D,        // Data length (13 bytes follow)
-        0x82,        // Write instruction
-        0x03, 0x10,  // Curve fixed address
-        0x5A, 0xA5,  // Curve Buffer Init command
-        0x01, 0x00,  // 1 channel active
-        0x00, 0x02,  // Target Channel 0, sending 2 words (points) at a time
-
-        // Data payload slots
-        0x00, 0x00,  // command[12], command[13] -> Point 1 Y-Value
-        0x00, 0x00   // command[14], command[15] -> Point 2 Y-Value
-    };
-
-    // Tracking variables to oscillate values within your screen's visible bounds
-    uint16_t point1_val = 40;
-    uint16_t point2_val = 60;
-    bool counting_up = true;
-
     /* Open UART Driver */
-    R_SCI_UART_Open(&g_uart4_ctrl, &g_uart4_cfg);
+    R_SCI_UART_Open (&g_uart4_ctrl, &g_uart4_cfg);
 
     // Give the DWIN screen a solid 2 seconds to initialize its OS layout completely
-    R_BSP_SoftwareDelay(2, BSP_DELAY_UNITS_SECONDS);
+    R_BSP_SoftwareDelay (2, BSP_DELAY_UNITS_SECONDS);
 
-    while(1)
+    while (1)
     {
-        // 1. Zigzag Generation Math Engine
-        // Moves the data points up and down smoothly between 35 and 65 (safely wrapping your 50 reference center)
-        if (counting_up)
-        {
-            point1_val += 2;
-            point2_val += 2;
-            if (point2_val >= 65)
-            {
-                counting_up = false; // hit peak, shift direction down
-            }
-        }
-        else
-        {
-            point1_val -= 2;
-            point2_val -= 2;
-            if (point1_val <= 35)
-            {
-                counting_up = true; // hit floor, shift direction up
-            }
-        }
-
-        // 2. Parse 16-bit variables into the 8-bit Big Endian UART packet
-        command[12] = (uint8_t)((point1_val >> 8) & 0xFF);
-        command[13] = (uint8_t)(point1_val & 0xFF);
-
-        command[14] = (uint8_t)((point2_val >> 8) & 0xFF);
-        command[15] = (uint8_t)(point2_val & 0xFF);
-
-        // 3. Clear callback check flag and fire the data frame out
         uart_tx_complete = false;
-        R_SCI_UART_Write(&g_uart4_ctrl, command, sizeof(command));
-
-        // Wait here transparently for the hardware UART shift registers to empty safely
-        // This ensures frames never stomp on top of each other
+        dwin_display_input_voltage_graph ();            //display input volatge graph
         while (!uart_tx_complete)
-        {
-            // Optional timeout safety loop can be added here if needed
-        }
+            ;
 
-        // Control scrolling speed / step width across your layout grid
-        R_BSP_SoftwareDelay(150, BSP_DELAY_UNITS_MILLISECONDS);
+        uart_tx_complete = false;
+        dwin_display_output_voltage_graph ();          //display output volatge graph
+        while (!uart_tx_complete)
+            ;
+
+        uart_tx_complete = false;
+        dwin_display_load_percent_graph();             //display laod percentage graph
+        while (!uart_tx_complete)
+                   ;
+
+        uart_tx_complete = false;
+        dwin_display_input_voltage ();                 //display input voltage value
+        while (!uart_tx_complete)
+            ;
+
+        uart_tx_complete = false;
+        dwin_display_output_voltage ();                //display output volatge value
+        while (!uart_tx_complete)
+            ;
+
+        uart_tx_complete = false;
+        dwin_display_load_percentage_value ();         //display load percentage
+        while (!uart_tx_complete)
+            ;
+
+        uart_tx_complete = false;
+        dwin_display_batt_percentage ();              //dispaly bar of battery percentage
+        while (!uart_tx_complete)
+            ;
+
+        uart_tx_complete = false;
+        dwin_display_batt_percentage_value();              //dispaly bar of battery percentage
+               while (!uart_tx_complete)
+                   ;
+        R_BSP_SoftwareDelay(500, BSP_DELAY_UNITS_MILLISECONDS);
     }
-
 #if BSP_TZ_SECURE_BUILD
     R_BSP_NonSecureEnter();
 #endif

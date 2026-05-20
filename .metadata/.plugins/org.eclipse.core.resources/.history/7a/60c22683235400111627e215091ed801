@@ -1,0 +1,14 @@
+/*
+ * value.h
+ *
+ *  Created on: 20-May-2026
+ *      Author: ashithajacob
+ */
+
+#ifndef VALUE_H_
+#define VALUE_H_
+
+static void dwin_display_values();
+
+
+#endif /* VALUE_H_ */

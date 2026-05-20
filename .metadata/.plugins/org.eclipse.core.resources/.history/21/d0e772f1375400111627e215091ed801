@@ -1,0 +1,30 @@
+/*
+ * bar_graph.c
+ *
+ *  Created on: 20-May-2026
+ *      Author: ashithajacob
+ */
+
+
+#include "hal_data.h"
+#include "bar_graph.h"
+
+
+ uint8_t graph_cmd[] =
+        {
+            0x5A,
+            0xA5,
+            0x05,
+            0x82,
+            0x10,
+            0x00,
+            0x00,
+            0x28
+        };
+
+void dwin_display_load_percentage()
+{
+
+    R_SCI_UART_Write (&g_uart4_ctrl, graph_cmd, sizeof(graph_cmd));
+
+}

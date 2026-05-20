@@ -1,0 +1,100 @@
+/*
+ * value.c
+ *
+ *  Created on: 20-May-2026
+ *      Author: ashithajacob
+ */
+
+
+#include "hal_data.h"
+#include "value.h"
+
+
+
+uint8_t dwin_cmd_input_voltage[] =
+    {
+        0x5A,
+        0xA5,
+        0x05,
+        0x82,
+        0x10,
+        0x00,
+        0x00,
+        0xE6
+    };
+
+uint8_t dwin_cmd_output_voltage[] =
+    {
+        0x5A,
+        0xA5,
+        0x05,
+        0x82,
+        0x10,
+        0x10,
+        0x00,
+        0xE4
+    };
+
+uint8_t dwin_cmd_load_percentage[] =
+     {
+         0x5A,
+         0xA5,
+         0x05,
+         0x82,
+         0x10,
+         0x20,
+         0x00,
+         0x28
+     };
+
+
+uint8_t dwin_batt_percentage[] =
+     {
+         0x5A,
+         0xA5,
+         0x05,
+         0x82,
+         0x10,
+         0x50,
+         0x00,
+         0x50
+     };
+void dwin_display_input_voltage()
+{
+
+           /* Send DWIN frame */
+           R_SCI_UART_Write(&g_uart4_ctrl,
+                   dwin_cmd_input_voltage,
+                            sizeof(dwin_cmd_input_voltage));
+
+
+
+
+}
+
+void dwin_display_output_voltage()
+{
+    R_SCI_UART_Write(&g_uart4_ctrl,
+                            dwin_cmd_output_voltage,
+                                     sizeof(dwin_cmd_output_voltage));
+
+}
+
+void dwin_display_load_percentage_value()
+{
+
+               R_SCI_UART_Write(&g_uart4_ctrl,
+                       dwin_cmd_load_percentage,
+                                      sizeof(dwin_cmd_load_percentage));
+
+}
+
+void dwin_display_batt_percentage()
+{
+
+    R_SCI_UART_Write(&g_uart4_ctrl,
+                     dwin_batt_percentage,
+                           sizeof(dwin_batt_percentage));
+
+
+}

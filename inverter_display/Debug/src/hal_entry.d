@@ -52,7 +52,8 @@ src/hal_entry.o: ../src/hal_entry.c \
  C:/Users/ashithajacob/Documents/GitHub/inverter_DWIN_display/inverter_display/ra/fsp/inc/instances/r_sci_uart.h \
  C:/Users/ashithajacob/Documents/GitHub/inverter_DWIN_display/inverter_display/ra/fsp/inc/api/r_uart_api.h \
  C:/Users/ashithajacob/Documents/GitHub/inverter_DWIN_display/inverter_display/ra/fsp/inc/api/r_transfer_api.h \
- C:/Users/ashithajacob/Documents/GitHub/inverter_DWIN_display/inverter_display/ra_cfg/fsp_cfg/r_sci_uart_cfg.h
+ C:/Users/ashithajacob/Documents/GitHub/inverter_DWIN_display/inverter_display/ra_cfg/fsp_cfg/r_sci_uart_cfg.h \
+ ../src/bar_graph.h ../src/graph.h ../src/value.h
 C:/Users/ashithajacob/Documents/GitHub/inverter_DWIN_display/inverter_display/ra_gen/hal_data.h:
 C:/Users/ashithajacob/Documents/GitHub/inverter_DWIN_display/inverter_display/ra/fsp/inc/api/bsp_api.h:
 C:/Users/ashithajacob/Documents/GitHub/inverter_DWIN_display/inverter_display/ra/fsp/inc/fsp_common_api.h:
@@ -107,3 +108,6 @@ C:/Users/ashithajacob/Documents/GitHub/inverter_DWIN_display/inverter_display/ra
 C:/Users/ashithajacob/Documents/GitHub/inverter_DWIN_display/inverter_display/ra/fsp/inc/api/r_uart_api.h:
 C:/Users/ashithajacob/Documents/GitHub/inverter_DWIN_display/inverter_display/ra/fsp/inc/api/r_transfer_api.h:
 C:/Users/ashithajacob/Documents/GitHub/inverter_DWIN_display/inverter_display/ra_cfg/fsp_cfg/r_sci_uart_cfg.h:
+../src/bar_graph.h:
+../src/graph.h:
+../src/value.h:

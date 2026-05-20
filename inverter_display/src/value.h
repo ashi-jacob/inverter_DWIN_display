@@ -1,0 +1,17 @@
+/*
+ * value.h
+ *
+ *  Created on: 20-May-2026
+ *      Author: ashithajacob
+ */
+
+#ifndef VALUE_H_
+#define VALUE_H_
+
+void dwin_display_input_voltage();
+void dwin_display_output_voltage();
+void dwin_display_load_percentage_value();
+void dwin_display_batt_percentage_value();
+
+
+#endif /* VALUE_H_ */

@@ -1,0 +1,56 @@
+#include "hal_data.h"
+#include "bar_graph.h"
+#include "graph.h"
+#include "value.h"
+
+FSP_CPP_HEADER
+void R_BSP_WarmStart(bsp_warm_start_event_t event);
+FSP_CPP_FOOTER
+
+volatile bool uart_tx_complete = false;
+
+/* UART Callback */
+void user_uart_callback(uart_callback_args_t * p_args)
+{
+    if (p_args->event == UART_EVENT_TX_COMPLETE)
+    {
+        uart_tx_complete = true;
+    }
+}
+
+
+void hal_entry(void)
+{
+    /* Open UART Driver */
+    R_SCI_UART_Open(&g_uart4_ctrl, &g_uart4_cfg);
+
+    // Give the DWIN screen a solid 2 seconds to initialize its OS layout completely
+    R_BSP_SoftwareDelay(2, BSP_DELAY_UNITS_SECONDS);
+
+    while(1)
+    {
+       dwin_display_graph();
+
+       dwin_display_values();
+    }
+#if BSP_TZ_SECURE_BUILD
+    R_BSP_NonSecureEnter();
+#endif
+}
+
+void R_BSP_WarmStart(bsp_warm_start_event_t event)
+{
+    if (BSP_WARM_START_RESET == event)
+    {
+#if BSP_FEATURE_FLASH_LP_VERSION != 0
+        /* Enable reading from data flash. */
+        R_FACI_LP->DFLCTL = 1U;
+#endif
+    }
+
+    if (BSP_WARM_START_POST_C == event)
+    {
+        /* Configure pins. */
+        R_IOPORT_Open (&g_ioport_ctrl, g_ioport.p_cfg);
+    }
+}

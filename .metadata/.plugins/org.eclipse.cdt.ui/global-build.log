@@ -1,308 +1,550 @@
 Extracting support files...
-12:57:14 **** Incremental Build of configuration Debug for project inverter_display ****
-make -j16 all 
-arm-none-eabi-size --format=berkeley "inverter_display.elf"
-   text	   data	    bss	    dec	    hex	filename
-   5540	     12	   1604	   7156	   1bf4	inverter_display.elf
-Extracting support files...
-12:59:13 **** Incremental Build of configuration Debug for project inverter_display ****
+13:48:46 **** Incremental Build of configuration Debug for project inverter_display ****
 make -j16 all 
 Building file: ../src/hal_entry.c
-Building target: inverter_display.elf
-arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
-arm-none-eabi-size --format=berkeley "inverter_display.elf"
-   text	   data	    bss	    dec	    hex	filename
-   5540	     12	   1604	   7156	   1bf4	inverter_display.elf
-Extracting support files...
-13:04:39 **** Incremental Build of configuration Debug for project inverter_display ****
-make -j16 all 
-Building file: ../src/hal_entry.c
-Building target: inverter_display.elf
-arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
-arm-none-eabi-size --format=berkeley "inverter_display.elf"
-   text	   data	    bss	    dec	    hex	filename
-   5572	     12	   1604	   7188	   1c14	inverter_display.elf
-Extracting support files...
-13:28:26 **** Incremental Build of configuration Debug for project inverter_display ****
-make -j16 all 
-Building file: ../src/hal_entry.c
-Building target: inverter_display.elf
-arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
-arm-none-eabi-size --format=berkeley "inverter_display.elf"
-   text	   data	    bss	    dec	    hex	filename
-   5616	     28	   1604	   7248	   1c50	inverter_display.elf
-Extracting support files...
-13:29:26 **** Incremental Build of configuration Debug for project inverter_display ****
-make -j16 all 
-Building file: ../src/hal_entry.c
+Building file: ../src/value.c
+In file included from ../src/hal_entry.c:4:
+../src/value.h:11:32: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'voltage'
+   11 | static void dwin_display_input voltage();
+      |                                ^~~~~~~
+../src/value.h:12:33: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'voltage'
+   12 | static void dwin_display_output voltage();
+      |                                 ^~~~~~~
+In file included from ../src/value.c:10:
+../src/value.h:11:32: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'voltage'
+   11 | static void dwin_display_input voltage();
+      |                                ^~~~~~~
+../src/value.h:12:33: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'voltage'
+   12 | static void dwin_display_output voltage();
+      |                                 ^~~~~~~
+../src/value.c:48:32: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'voltage'
+   48 | static void dwin_display_input voltage()
+      |                                ^~~~~~~
+../src/value.c:61:33: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'voltage'
+   61 | static void dwin_display_output voltage()
+      |                                 ^~~~~~~
+../src/value.c:69:13: warning: 'dwin_display_load_percentage_value' defined but not used [-Wunused-function]
+   69 | static void dwin_display_load_percentage_value()
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ../src/hal_entry.c: In function 'hal_entry':
-../src/hal_entry.c:39:13: warning: unused variable 'init_cmd' [-Wunused-variable]
-   39 |     uint8_t init_cmd[] =
-      |             ^~~~~~~~
-Building target: inverter_display.elf
-arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
-arm-none-eabi-size --format=berkeley "inverter_display.elf"
-   text	   data	    bss	    dec	    hex	filename
-   5540	     12	   1604	   7156	   1bf4	inverter_display.elf
-Extracting support files...
-13:30:00 **** Incremental Build of configuration Debug for project inverter_display ****
-make -j16 all 
-Building file: ../src/hal_entry.c
-Building target: inverter_display.elf
-arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
-arm-none-eabi-size --format=berkeley "inverter_display.elf"
-   text	   data	    bss	    dec	    hex	filename
-   5540	     12	   1604	   7156	   1bf4	inverter_display.elf
-Extracting support files...
-13:43:07 **** Incremental Build of configuration Debug for project inverter_display ****
-make -j16 all 
-Building file: ../src/hal_entry.c
-Building target: inverter_display.elf
-arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
-arm-none-eabi-size --format=berkeley "inverter_display.elf"
-   text	   data	    bss	    dec	    hex	filename
-   4644	      8	   1608	   6260	   1874	inverter_display.elf
-Extracting support files...
-13:51:00 **** Incremental Build of configuration Debug for project inverter_display ****
-make -j16 all 
-arm-none-eabi-size --format=berkeley "inverter_display.elf"
-   text	   data	    bss	    dec	    hex	filename
-   4644	      8	   1608	   6260	   1874	inverter_display.elf
-Extracting support files...
-13:52:26 **** Incremental Build of configuration Debug for project inverter_display ****
-make -j16 all 
-Building file: ../src/hal_entry.c
-Building target: inverter_display.elf
-arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
-arm-none-eabi-size --format=berkeley "inverter_display.elf"
-   text	   data	    bss	    dec	    hex	filename
-   4644	      8	   1608	   6260	   1874	inverter_display.elf
-Extracting support files...
-13:53:24 **** Incremental Build of configuration Debug for project inverter_display ****
-make -j16 all 
-Building file: ../src/hal_entry.c
-Building target: inverter_display.elf
-arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
-arm-none-eabi-size --format=berkeley "inverter_display.elf"
-   text	   data	    bss	    dec	    hex	filename
-   5540	     12	   1604	   7156	   1bf4	inverter_display.elf
-Extracting support files...
-14:01:24 **** Incremental Build of configuration Debug for project inverter_display ****
-make -j16 all 
-Building file: ../src/hal_entry.c
-../src/hal_entry.c: In function 'hal_entry':
-../src/hal_entry.c:62:13: warning: conversion from 'int' to 'unsigned char' may change value [-Wconversion]
-   62 |             (value >> 8) & 0xFF,
-      |             ^
-../src/hal_entry.c:63:13: warning: conversion from 'int' to 'unsigned char' may change value [-Wconversion]
-   63 |             value & 0xFF
-      |             ^~~~~
-Building target: inverter_display.elf
-arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
-arm-none-eabi-size --format=berkeley "inverter_display.elf"
-   text	   data	    bss	    dec	    hex	filename
-   5576	     28	   1604	   7208	   1c28	inverter_display.elf
-Extracting support files...
-14:03:44 **** Incremental Build of configuration Debug for project inverter_display ****
-make -j16 all 
-Building file: ../src/hal_entry.c
-../src/hal_entry.c: In function 'hal_entry':
-../src/hal_entry.c:80:13: warning: conversion from 'int' to 'unsigned char' may change value [-Wconversion]
-   80 |             (value >> 8) & 0xFF,
-      |             ^
-../src/hal_entry.c:81:13: warning: conversion from 'int' to 'unsigned char' may change value [-Wconversion]
-   81 |             value & 0xFF
-      |             ^~~~~
+../src/hal_entry.c:36:9: error: unknown type name 'dwin_display_input'
+   36 |         dwin_display_input voltage ();
+      |         ^~~~~~~~~~~~~~~~~~
+make: *** [src/subdir.mk:28: src/value.o] Error 1
+make: *** Waiting for unfinished jobs....
+../src/hal_entry.c:40:9: error: unknown type name 'dwin_display_output'
+   40 |         dwin_display_output voltage ();
+      |         ^~~~~~~~~~~~~~~~~~~
+In file included from ../src/hal_entry.c:2:
 ../src/hal_entry.c: At top level:
-../src/hal_entry.c:101:6: warning: no previous declaration for 'R_BSP_WarmStart' [-Wmissing-declarations]
-  101 | void R_BSP_WarmStart(bsp_warm_start_event_t event)
-      |      ^~~~~~~~~~~~~~~
+../src/bar_graph.h:14:13: warning: 'dwin_display_load_percentage' used but never defined
+   14 | static void dwin_display_load_percentage();
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../src/hal_entry.c:3:
+../src/graph.h:11:13: warning: 'dwin_display_graph' used but never defined
+   11 | static void dwin_display_graph();
+      |             ^~~~~~~~~~~~~~~~~~
+In file included from ../src/hal_entry.c:4:
+../src/value.h:13:13: warning: 'dwin_display_load_percentage_value' used but never defined
+   13 | static void dwin_display_load_percentage_value();
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [src/subdir.mk:28: src/hal_entry.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+Extracting support files...
+13:50:51 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/hal_entry.c
+Building file: ../src/value.c
+../src/value.c:49:32: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'voltage'
+   49 | static void dwin_display_input voltage()
+      |                                ^~~~~~~
+../src/value.c:62:33: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'voltage'
+   62 | static void dwin_display_output voltage()
+      |                                 ^~~~~~~
+In file included from ../src/value.c:10:
+../src/value.h:11:13: warning: 'dwin_display_input_voltage' declared 'static' but never defined [-Wunused-function]
+   11 | static void dwin_display_input_voltage();
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/value.h:12:13: warning: 'dwin_display_output_voltage' declared 'static' but never defined [-Wunused-function]
+   12 | static void dwin_display_output_voltage();
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/value.c:70:13: warning: 'dwin_display_load_percentage_value' defined but not used [-Wunused-function]
+   70 | static void dwin_display_load_percentage_value()
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../src/hal_entry.c:2:
+../src/bar_graph.h:14:13: warning: 'dwin_display_load_percentage' used but never defined
+   14 | static void dwin_display_load_percentage();
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../src/hal_entry.c:3:
+../src/graph.h:11:13: warning: 'dwin_display_graph' used but never defined
+   11 | static void dwin_display_graph();
+      |             ^~~~~~~~~~~~~~~~~~
+In file included from ../src/hal_entry.c:4:
+../src/value.h:11:13: warning: 'dwin_display_input_voltage' used but never defined
+   11 | static void dwin_display_input_voltage();
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/value.h:12:13: warning: 'dwin_display_output_voltage' used but never defined
+   12 | static void dwin_display_output_voltage();
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/value.h:13:13: warning: 'dwin_display_load_percentage_value' used but never defined
+   13 | static void dwin_display_load_percentage_value();
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [src/subdir.mk:28: src/value.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+Extracting support files...
+13:51:11 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/value.c
+../src/value.c:70:13: warning: 'dwin_display_load_percentage_value' defined but not used [-Wunused-function]
+   70 | static void dwin_display_load_percentage_value()
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/value.c:62:13: warning: 'dwin_display_output_voltage' defined but not used [-Wunused-function]
+   62 | static void dwin_display_output_voltage()
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/value.c:49:13: warning: 'dwin_display_input_voltage' defined but not used [-Wunused-function]
+   49 | static void dwin_display_input_voltage()
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~
+Building target: inverter_display.elf
+c:/renesas/ra/e2studio_v2022-04_fsp_v3.8.0/toolchains/gcc_arm/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./src/hal_entry.o: in function `hal_entry':
+C:\Users\ashithajacob\Documents\GitHub\inverter_DWIN_display\inverter_display\Debug/../src/hal_entry.c:32: undefined reference to `dwin_display_graph'
+c:/renesas/ra/e2studio_v2022-04_fsp_v3.8.0/toolchains/gcc_arm/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: C:\Users\ashithajacob\Documents\GitHub\inverter_DWIN_display\inverter_display\Debug/../src/hal_entry.c:36: undefined reference to `dwin_display_input_voltage'
+c:/renesas/ra/e2studio_v2022-04_fsp_v3.8.0/toolchains/gcc_arm/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: C:\Users\ashithajacob\Documents\GitHub\inverter_DWIN_display\inverter_display\Debug/../src/hal_entry.c:40: undefined reference to `dwin_display_output_voltage'
+c:/renesas/ra/e2studio_v2022-04_fsp_v3.8.0/toolchains/gcc_arm/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: C:\Users\ashithajacob\Documents\GitHub\inverter_DWIN_display\inverter_display\Debug/../src/hal_entry.c:45: undefined reference to `dwin_display_load_percentage_value'
+c:/renesas/ra/e2studio_v2022-04_fsp_v3.8.0/toolchains/gcc_arm/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: C:\Users\ashithajacob\Documents\GitHub\inverter_DWIN_display\inverter_display\Debug/../src/hal_entry.c:49: undefined reference to `dwin_display_load_percentage'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:96: inverter_display.elf] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+Extracting support files...
+13:51:24 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/hal_entry.c
+In file included from ../src/hal_entry.c:2:
+../src/bar_graph.h:14:13: warning: 'dwin_display_load_percentage' used but never defined
+   14 | static void dwin_display_load_percentage();
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../src/hal_entry.c:3:
+../src/graph.h:11:13: warning: 'dwin_display_graph' used but never defined
+   11 | static void dwin_display_graph();
+      |             ^~~~~~~~~~~~~~~~~~
+In file included from ../src/hal_entry.c:4:
+../src/value.h:11:13: warning: 'dwin_display_input_voltage' used but never defined
+   11 | static void dwin_display_input_voltage();
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/value.h:12:13: warning: 'dwin_display_output_voltage' used but never defined
+   12 | static void dwin_display_output_voltage();
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/value.h:13:13: warning: 'dwin_display_load_percentage_value' used but never defined
+   13 | static void dwin_display_load_percentage_value();
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Building target: inverter_display.elf
+c:/renesas/ra/e2studio_v2022-04_fsp_v3.8.0/toolchains/gcc_arm/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./src/hal_entry.o: in function `hal_entry':
+C:\Users\ashithajacob\Documents\GitHub\inverter_DWIN_display\inverter_display\Debug/../src/hal_entry.c:32: undefined reference to `dwin_display_graph'
+c:/renesas/ra/e2studio_v2022-04_fsp_v3.8.0/toolchains/gcc_arm/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: C:\Users\ashithajacob\Documents\GitHub\inverter_DWIN_display\inverter_display\Debug/../src/hal_entry.c:36: undefined reference to `dwin_display_input_voltage'
+c:/renesas/ra/e2studio_v2022-04_fsp_v3.8.0/toolchains/gcc_arm/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: C:\Users\ashithajacob\Documents\GitHub\inverter_DWIN_display\inverter_display\Debug/../src/hal_entry.c:40: undefined reference to `dwin_display_output_voltage'
+c:/renesas/ra/e2studio_v2022-04_fsp_v3.8.0/toolchains/gcc_arm/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: C:\Users\ashithajacob\Documents\GitHub\inverter_DWIN_display\inverter_display\Debug/../src/hal_entry.c:45: undefined reference to `dwin_display_load_percentage_value'
+c:/renesas/ra/e2studio_v2022-04_fsp_v3.8.0/toolchains/gcc_arm/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: C:\Users\ashithajacob\Documents\GitHub\inverter_DWIN_display\inverter_display\Debug/../src/hal_entry.c:49: undefined reference to `dwin_display_load_percentage'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:96: inverter_display.elf] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+Extracting support files...
+13:53:27 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/hal_entry.c
+Building file: ../src/value.c
+In file included from ../src/hal_entry.c:2:
+../src/bar_graph.h:14:13: warning: 'dwin_display_load_percentage' used but never defined
+   14 | static void dwin_display_load_percentage();
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../src/hal_entry.c:3:
+../src/graph.h:11:13: warning: 'dwin_display_graph' used but never defined
+   11 | static void dwin_display_graph();
+      |             ^~~~~~~~~~~~~~~~~~
+Building target: inverter_display.elf
+c:/renesas/ra/e2studio_v2022-04_fsp_v3.8.0/toolchains/gcc_arm/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./src/hal_entry.o: in function `hal_entry':
+C:\Users\ashithajacob\Documents\GitHub\inverter_DWIN_display\inverter_display\Debug/../src/hal_entry.c:32: undefined reference to `dwin_display_graph'
+c:/renesas/ra/e2studio_v2022-04_fsp_v3.8.0/toolchains/gcc_arm/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: C:\Users\ashithajacob\Documents\GitHub\inverter_DWIN_display\inverter_display\Debug/../src/hal_entry.c:49: undefined reference to `dwin_display_load_percentage'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:96: inverter_display.elf] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+Extracting support files...
+13:53:57 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/bar_graph.c
+Building file: ../src/graph.c
+Building file: ../src/hal_entry.c
 Building target: inverter_display.elf
 arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
-   5648	     28	   1604	   7280	   1c70	inverter_display.elf
+   5708	     60	   1604	   7372	   1ccc	inverter_display.elf
 Extracting support files...
-15:27:53 **** Incremental Build of configuration Debug for project inverter_display ****
+15:13:57 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/graph.c
+Building file: ../src/hal_entry.c
+../src/graph.c:32:9: error: redefinition of 'command'
+   32 | uint8_t command[] =
+      |         ^~~~~~~
+../src/graph.c:11:9: note: previous definition of 'command' was here
+   11 | uint8_t command[] =
+      |         ^~~~~~~
+make: *** [src/subdir.mk:28: src/graph.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+Extracting support files...
+15:15:06 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/graph.c
+../src/graph.c: In function 'dwin_display_output_voltage_graph':
+../src/graph.c:60:9: error: 'command' undeclared (first use in this function)
+   60 |         command[15] = 0x15;
+      |         ^~~~~~~
+../src/graph.c:60:9: note: each undeclared identifier is reported only once for each function it appears in
+../src/graph.c: In function 'dwin_display_input_voltage_graph':
+../src/graph.c:79:9: error: 'command' undeclared (first use in this function)
+   79 |         command[15] = 0x21;
+      |         ^~~~~~~
+make: *** [src/subdir.mk:28: src/graph.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+Extracting support files...
+15:16:19 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/graph.c
+Building target: inverter_display.elf
+arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
+arm-none-eabi-size --format=berkeley "inverter_display.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5800	     76	   1604	   7480	   1d38	inverter_display.elf
+Extracting support files...
+16:07:47 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/bar_graph.c
+Building file: ../src/graph.c
+Building file: ../src/hal_entry.c
+Building file: ../src/value.c
+../src/value.c:92:6: warning: no previous declaration for 'dwin_display_batt_percentage' [-Wmissing-declarations]
+   92 | void dwin_display_batt_percentage()
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Building target: inverter_display.elf
+c:/renesas/ra/e2studio_v2022-04_fsp_v3.8.0/toolchains/gcc_arm/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./src/value.o: in function `dwin_display_batt_percentage':
+C:\Users\ashithajacob\Documents\GitHub\inverter_DWIN_display\inverter_display\Debug/../src/value.c:95: multiple definition of `dwin_display_batt_percentage'; ./src/bar_graph.o:C:\Users\ashithajacob\Documents\GitHub\inverter_DWIN_display\inverter_display\Debug/../src/bar_graph.c:28: first defined here
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:96: inverter_display.elf] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+Extracting support files...
+16:08:31 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/hal_entry.c
+Building file: ../src/value.c
+Building target: inverter_display.elf
+c:/renesas/ra/e2studio_v2022-04_fsp_v3.8.0/toolchains/gcc_arm/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./src/value.o: in function `dwin_display_batt_percentage':
+C:\Users\ashithajacob\Documents\GitHub\inverter_DWIN_display\inverter_display\Debug/../src/value.c:95: multiple definition of `dwin_display_batt_percentage'; ./src/bar_graph.o:C:\Users\ashithajacob\Documents\GitHub\inverter_DWIN_display\inverter_display\Debug/../src/bar_graph.c:28: first defined here
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:96: inverter_display.elf] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+Extracting support files...
+16:11:45 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/hal_entry.c
+Building file: ../src/value.c
+Building target: inverter_display.elf
+arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
+arm-none-eabi-size --format=berkeley "inverter_display.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5908	     92	   1604	   7604	   1db4	inverter_display.elf
+Extracting support files...
+16:19:16 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/bar_graph.c
+Building target: inverter_display.elf
+arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
+arm-none-eabi-size --format=berkeley "inverter_display.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5908	     92	   1604	   7604	   1db4	inverter_display.elf
+Extracting support files...
+16:20:44 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/bar_graph.c
+Building target: inverter_display.elf
+arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
+arm-none-eabi-size --format=berkeley "inverter_display.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5908	     92	   1604	   7604	   1db4	inverter_display.elf
+Extracting support files...
+16:22:37 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/bar_graph.c
+Building target: inverter_display.elf
+arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
+arm-none-eabi-size --format=berkeley "inverter_display.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5908	     92	   1604	   7604	   1db4	inverter_display.elf
+Extracting support files...
+16:39:46 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/graph.c
+Building file: ../src/value.c
+Building target: inverter_display.elf
+arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
+arm-none-eabi-size --format=berkeley "inverter_display.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5908	     92	   1604	   7604	   1db4	inverter_display.elf
+Extracting support files...
+16:41:32 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/graph.c
+Building target: inverter_display.elf
+arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
+arm-none-eabi-size --format=berkeley "inverter_display.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5904	     92	   1604	   7600	   1db0	inverter_display.elf
+Extracting support files...
+16:46:02 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/graph.c
+Building target: inverter_display.elf
+arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
+arm-none-eabi-size --format=berkeley "inverter_display.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5904	     92	   1604	   7600	   1db0	inverter_display.elf
+Extracting support files...
+17:10:14 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/graph.c
+Building target: inverter_display.elf
+arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
+arm-none-eabi-size --format=berkeley "inverter_display.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5904	     92	   1604	   7600	   1db0	inverter_display.elf
+Extracting support files...
+17:11:21 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+arm-none-eabi-size --format=berkeley "inverter_display.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5904	     92	   1604	   7600	   1db0	inverter_display.elf
+Extracting support files...
+17:13:02 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+arm-none-eabi-size --format=berkeley "inverter_display.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5904	     92	   1604	   7600	   1db0	inverter_display.elf
+Extracting support files...
+17:14:53 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/graph.c
+../src/graph.c: In function 'dwin_display_output_voltage_graph':
+../src/graph.c:83:5: error: 'uart_tx_complete' undeclared (first use in this function)
+   83 |     uart_tx_complete = false;
+      |     ^~~~~~~~~~~~~~~~
+../src/graph.c:83:5: note: each undeclared identifier is reported only once for each function it appears in
+../src/graph.c: In function 'dwin_display_input_voltage_graph':
+../src/graph.c:109:5: error: 'uart_tx_complete' undeclared (first use in this function)
+  109 |     uart_tx_complete = false;
+      |     ^~~~~~~~~~~~~~~~
+../src/graph.c: In function 'dwin_display_load_percent_graph':
+../src/graph.c:138:5: error: 'uart_tx_complete' undeclared (first use in this function)
+  138 |     uart_tx_complete = false;
+      |     ^~~~~~~~~~~~~~~~
+make: *** [src/subdir.mk:28: src/graph.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+Extracting support files...
+17:15:43 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/graph.c
+Building target: inverter_display.elf
+arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
+arm-none-eabi-size --format=berkeley "inverter_display.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5904	     92	   1604	   7600	   1db0	inverter_display.elf
+Extracting support files...
+17:18:18 **** Incremental Build of configuration Debug for project inverter_display ****
 make -j16 all 
 Building file: ../src/hal_entry.c
 Building target: inverter_display.elf
 arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
-   5536	     12	   1604	   7152	   1bf0	inverter_display.elf
+   5936	    100	   1604	   7640	   1dd8	inverter_display.elf
 Extracting support files...
-15:44:10 **** Incremental Build of configuration Debug for project inverter_display ****
+17:24:34 **** Incremental Build of configuration Debug for project inverter_display ****
 make -j16 all 
+Building file: ../src/graph.c
 Building file: ../src/hal_entry.c
+Building file: ../src/value.c
 Building target: inverter_display.elf
 arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
-   5584	     12	   1604	   7200	   1c20	inverter_display.elf
+   6004	    100	   1604	   7708	   1e1c	inverter_display.elf
 Extracting support files...
-15:55:08 **** Incremental Build of configuration Debug for project inverter_display ****
+17:29:57 **** Incremental Build of configuration Debug for project inverter_display ****
 make -j16 all 
-Building file: ../src/hal_entry.c
-../src/hal_entry.c: In function 'hal_entry':
-../src/hal_entry.c:50:14: warning: unused variable 'dynamic_point_2' [-Wunused-variable]
-   50 |     uint16_t dynamic_point_2 = 150;
-      |              ^~~~~~~~~~~~~~~
-../src/hal_entry.c:49:14: warning: unused variable 'dynamic_point_1' [-Wunused-variable]
-   49 |     uint16_t dynamic_point_1 = 100;
-      |              ^~~~~~~~~~~~~~~
+Building file: ../src/value.c
 Building target: inverter_display.elf
 arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
-   5536	     12	   1604	   7152	   1bf0	inverter_display.elf
+   6020	    100	   1604	   7724	   1e2c	inverter_display.elf
 Extracting support files...
-15:56:08 **** Incremental Build of configuration Debug for project inverter_display ****
+17:32:13 **** Incremental Build of configuration Debug for project inverter_display ****
 make -j16 all 
-Building file: ../src/hal_entry.c
+Building file: ../src/value.c
 Building target: inverter_display.elf
 arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
-   5536	     12	   1604	   7152	   1bf0	inverter_display.elf
+   6020	    100	   1604	   7724	   1e2c	inverter_display.elf
 Extracting support files...
-15:56:38 **** Incremental Build of configuration Debug for project inverter_display ****
+17:32:54 **** Incremental Build of configuration Debug for project inverter_display ****
 make -j16 all 
-Building file: ../src/hal_entry.c
+Building file: ../src/value.c
 Building target: inverter_display.elf
 arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
-   5536	     12	   1604	   7152	   1bf0	inverter_display.elf
+   6020	    100	   1604	   7724	   1e2c	inverter_display.elf
 Extracting support files...
-15:59:50 **** Incremental Build of configuration Debug for project inverter_display ****
+17:34:34 **** Incremental Build of configuration Debug for project inverter_display ****
 make -j16 all 
-Building file: ../src/hal_entry.c
+Building file: ../src/graph.c
+Building file: ../src/value.c
 Building target: inverter_display.elf
 arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
-   5524	     28	   1604	   7156	   1bf4	inverter_display.elf
+   6012	    100	   1604	   7716	   1e24	inverter_display.elf
 Extracting support files...
-16:00:15 **** Incremental Build of configuration Debug for project inverter_display ****
+17:35:25 **** Incremental Build of configuration Debug for project inverter_display ****
 make -j16 all 
-arm-none-eabi-size --format=berkeley "inverter_display.elf"
-   text	   data	    bss	    dec	    hex	filename
-   5524	     28	   1604	   7156	   1bf4	inverter_display.elf
-Extracting support files...
-16:02:54 **** Incremental Build of configuration Debug for project inverter_display ****
-make -j16 all 
-Building file: ../src/hal_entry.c
+Building file: ../src/graph.c
 Building target: inverter_display.elf
 arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
-   5508	     28	   1604	   7140	   1be4	inverter_display.elf
+   6016	    100	   1604	   7720	   1e28	inverter_display.elf
 Extracting support files...
-16:19:28 **** Incremental Build of configuration Debug for project inverter_display ****
+17:44:37 **** Incremental Build of configuration Debug for project inverter_display ****
 make -j16 all 
-Building file: ../src/hal_entry.c
+Building file: ../src/graph.c
 Building target: inverter_display.elf
 arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
-   5608	     28	   1604	   7240	   1c48	inverter_display.elf
+   6016	    100	   1604	   7720	   1e28	inverter_display.elf
 Extracting support files...
-16:21:57 **** Incremental Build of configuration Debug for project inverter_display ****
+17:45:26 **** Incremental Build of configuration Debug for project inverter_display ****
 make -j16 all 
-Building file: ../src/hal_entry.c
+Building file: ../src/graph.c
 Building target: inverter_display.elf
 arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
-   5608	     28	   1604	   7240	   1c48	inverter_display.elf
+   6016	    100	   1604	   7720	   1e28	inverter_display.elf
 Extracting support files...
-17:08:36 **** Incremental Build of configuration Debug for project inverter_display ****
+17:47:28 **** Incremental Build of configuration Debug for project inverter_display ****
 make -j16 all 
-Building file: ../src/hal_entry.c
+Building file: ../src/graph.c
+Building file: ../src/value.c
 Building target: inverter_display.elf
 arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
-   5592	     28	   1604	   7224	   1c38	inverter_display.elf
+   6016	    100	   1604	   7720	   1e28	inverter_display.elf
 Extracting support files...
-17:09:17 **** Incremental Build of configuration Debug for project inverter_display ****
+17:48:30 **** Incremental Build of configuration Debug for project inverter_display ****
 make -j16 all 
-Building file: ../src/hal_entry.c
+Building file: ../src/value.c
 Building target: inverter_display.elf
 arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
-   5608	     28	   1604	   7240	   1c48	inverter_display.elf
+   6016	    100	   1604	   7720	   1e28	inverter_display.elf
 Extracting support files...
-18:23:11 **** Incremental Build of configuration Debug for project inverter_display ****
+18:02:59 **** Incremental Build of configuration Debug for project inverter_display ****
 make -j16 all 
-Building file: ../src/hal_entry.c
+Building file: ../src/graph.c
 Building target: inverter_display.elf
 arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
-   5608	     28	   1604	   7240	   1c48	inverter_display.elf
+   5956	     84	   1604	   7644	   1ddc	inverter_display.elf
 Extracting support files...
-18:37:23 **** Incremental Build of configuration Debug for project inverter_display ****
+18:04:08 **** Incremental Build of configuration Debug for project inverter_display ****
 make -j16 all 
-Building file: ../src/hal_entry.c
+Building file: ../src/graph.c
 Building target: inverter_display.elf
 arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
-   5608	     28	   1604	   7240	   1c48	inverter_display.elf
+   5956	     84	   1604	   7644	   1ddc	inverter_display.elf
 Extracting support files...
-18:38:31 **** Incremental Build of configuration Debug for project inverter_display ****
+18:04:39 **** Incremental Build of configuration Debug for project inverter_display ****
 make -j16 all 
-Building file: ../src/hal_entry.c
+Building file: ../src/graph.c
 Building target: inverter_display.elf
 arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
-   5608	     28	   1604	   7240	   1c48	inverter_display.elf
+   5956	     84	   1604	   7644	   1ddc	inverter_display.elf
 Extracting support files...
-19:16:18 **** Incremental Build of configuration Debug for project inverter_display ****
+18:05:46 **** Incremental Build of configuration Debug for project inverter_display ****
 make -j16 all 
-Building file: ../src/hal_entry.c
+Building file: ../src/graph.c
 Building target: inverter_display.elf
 arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
-   5608	     28	   1604	   7240	   1c48	inverter_display.elf
+   5956	    100	   1604	   7660	   1dec	inverter_display.elf
 Extracting support files...
-19:25:25 **** Incremental Build of configuration Debug for project inverter_display ****
+18:07:09 **** Incremental Build of configuration Debug for project inverter_display ****
 make -j16 all 
-Building file: ../src/hal_entry.c
+Building file: ../src/graph.c
+Building file: ../src/value.c
 Building target: inverter_display.elf
 arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
-   5588	     28	   1604	   7220	   1c34	inverter_display.elf
+   5956	    100	   1604	   7660	   1dec	inverter_display.elf
 Extracting support files...
-19:27:01 **** Incremental Build of configuration Debug for project inverter_display ****
+18:11:02 **** Incremental Build of configuration Debug for project inverter_display ****
 make -j16 all 
-Building file: ../src/hal_entry.c
+Building file: ../src/graph.c
 Building target: inverter_display.elf
 arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
-   5524	     28	   1604	   7156	   1bf4	inverter_display.elf
+   5956	    100	   1604	   7660	   1dec	inverter_display.elf
 Extracting support files...
-19:27:44 **** Incremental Build of configuration Debug for project inverter_display ****
+18:14:21 **** Incremental Build of configuration Debug for project inverter_display ****
 make -j16 all 
-Building file: ../src/hal_entry.c
+Building file: ../src/graph.c
 Building target: inverter_display.elf
 arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
-   5524	     28	   1604	   7156	   1bf4	inverter_display.elf
+   5956	    100	   1604	   7660	   1dec	inverter_display.elf
 Extracting support files...
-19:28:35 **** Incremental Build of configuration Debug for project inverter_display ****
+18:15:42 **** Incremental Build of configuration Debug for project inverter_display ****
 make -j16 all 
-Building file: ../src/hal_entry.c
+Building file: ../src/graph.c
 Building target: inverter_display.elf
 arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
 arm-none-eabi-size --format=berkeley "inverter_display.elf"
    text	   data	    bss	    dec	    hex	filename
-   5608	     28	   1604	   7240	   1c48	inverter_display.elf
+   6012	    100	   1604	   7716	   1e24	inverter_display.elf
+Extracting support files...
+18:16:35 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+Building file: ../src/graph.c
+Building target: inverter_display.elf
+arm-none-eabi-objcopy -O srec "inverter_display.elf"  "inverter_display.srec"
+arm-none-eabi-size --format=berkeley "inverter_display.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5956	    100	   1604	   7660	   1dec	inverter_display.elf
+Extracting support files...
+18:34:01 **** Incremental Build of configuration Debug for project inverter_display ****
+make -j16 all 
+arm-none-eabi-size --format=berkeley "inverter_display.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5956	    100	   1604	   7660	   1dec	inverter_display.elf

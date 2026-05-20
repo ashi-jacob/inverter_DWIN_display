@@ -1,0 +1,123 @@
+/*
+ * graph.c
+
+ *
+ *  Created on: 20-May-2026
+ *      Author: ashithajacob
+ */
+#include "hal_data.h"
+#include "graph.h"
+
+uint8_t output_voltage_command[] =
+{ 0x5A, 0xA5,  // Frame header
+  0x0D,        // Data length (13 bytes follow)
+  0x82,        // Write instruction
+  0x03,
+  0x10,  // Curve fixed address
+  0x5A,
+  0xA5,  // Curve Buffer Init command
+  0x01,
+  0x00,  // 1 channel active
+  0x00,
+  0x02,  // Target Channel 0, sending 2 words (points) at a time
+
+  // Data payload slots
+  0x00,
+  0x28,  // command[12], command[13] -> Point 1 Y-Value
+  0x00,
+  0x28   // command[14], command[15] -> Point 2 Y-Value
+        };
+
+
+uint8_t input_voltage_command[] =
+{ 0x5A, 0xA5,  // Frame header
+  0x0D,        // Data length (13 bytes follow)
+  0x82,        // Write instruction
+  0x03,
+  0x10,  // Curve fixed address
+  0x5A,
+  0xA5,  // Curve Buffer Init command
+  0x01,
+  0x01,  // 2 channel active
+  0x00,
+  0x02,  // Target Channel 0, sending 2 words (points) at a time
+
+  // Data payload slots
+  0x00,
+  0x18,  // command[12], command[13] -> Point 1 Y-Value
+  0x00,
+  0x18   // command[14], command[15] -> Point 2 Y-Value
+        };
+
+
+uint8_t load_percent_command[] =
+{ 0x5A, 0xA5,  // Frame header
+  0x0D,        // Data length (13 bytes follow)
+  0x82,        // Write instruction
+  0x03,
+  0x10,  // Curve fixed address
+  0x5A,
+  0xA5,  // Curve Buffer Init command
+  0x01,
+  0x02,  // 2 channel active
+  0x00,
+  0x02,  // Target Channel 0, sending 2 words (points) at a time
+
+  // Data payload slots
+  0x00,
+  0x0A,  // command[12], command[13] -> Point 1 Y-Value
+  0x00,
+  0x0A   // command[14], command[15] -> Point 2 Y-Value
+        };
+
+static uint8_t num1;
+static uint8_t num2;
+
+
+void dwin_display_output_voltage_graph()
+{
+    num1++;
+
+    if (num1 % 3 == 0)
+    {
+        output_voltage_command[15] = 0x15;
+    }
+    else
+    {
+        output_voltage_command[15] = 0x28;
+    }
+
+    R_SCI_UART_Write (&g_uart4_ctrl, output_voltage_command, sizeof(output_voltage_command));
+
+    R_BSP_SoftwareDelay (500, BSP_DELAY_UNITS_MILLISECONDS);
+}
+
+
+void dwin_display_input_voltage_graph()
+{
+    num2++;
+
+    if (num2 % 3 == 0)
+    {
+        input_voltage_command[15] = 0x21;
+    }
+    else
+    {
+        input_voltage_command[15] = 0x18;
+    }
+
+    R_SCI_UART_Write (&g_uart4_ctrl, input_voltage_command, sizeof(input_voltage_command));
+
+    R_BSP_SoftwareDelay (500, BSP_DELAY_UNITS_MILLISECONDS);
+}
+
+
+void dwin_display_load_percent_graph()
+{
+
+    R_SCI_UART_Write (&g_uart4_ctrl, input_voltage_command, sizeof(input_voltage_command));
+
+    R_BSP_SoftwareDelay (500, BSP_DELAY_UNITS_MILLISECONDS);
+}
+
+

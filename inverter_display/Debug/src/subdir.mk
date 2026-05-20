@@ -4,13 +4,22 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/hal_entry.c 
+../src/bar_graph.c \
+../src/graph.c \
+../src/hal_entry.c \
+../src/value.c 
 
 C_DEPS += \
-./src/hal_entry.d 
+./src/bar_graph.d \
+./src/graph.d \
+./src/hal_entry.d \
+./src/value.d 
 
 OBJS += \
-./src/hal_entry.o 
+./src/bar_graph.o \
+./src/graph.o \
+./src/hal_entry.o \
+./src/value.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes

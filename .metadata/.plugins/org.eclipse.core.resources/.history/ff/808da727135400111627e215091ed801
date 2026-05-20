@@ -1,0 +1,89 @@
+#include "hal_data.h"
+
+FSP_CPP_HEADER
+void R_BSP_WarmStart(bsp_warm_start_event_t event);
+FSP_CPP_FOOTER
+
+volatile bool uart_tx_complete = false;
+
+/* UART Callback */
+void user_uart_callback(uart_callback_args_t * p_args)
+{
+    if (p_args->event == UART_EVENT_TX_COMPLETE)
+    {
+        uart_tx_complete = true;
+    }
+}
+
+static uint8_t num =0;
+void hal_entry(void)
+{
+    // Exact structure matching your datasheet example
+    static uint8_t command[] = {
+        0x5A, 0xA5,  // Frame header
+        0x0D,        // Data length (13 bytes follow)
+        0x82,        // Write instruction
+        0x03, 0x10,  // Curve fixed address
+        0x5A, 0xA5,  // Curve Buffer Init command
+        0x01, 0x00,  // 1 channel active
+        0x00, 0x02,  // Target Channel 0, sending 2 words (points) at a time
+
+        // Data payload slots
+        0x00, 0x28,  // command[12], command[13] -> Point 1 Y-Value
+        0x00, 0x28   // command[14], command[15] -> Point 2 Y-Value
+    };
+
+    /* Open UART Driver */
+    R_SCI_UART_Open(&g_uart4_ctrl, &g_uart4_cfg);
+
+    // Give the DWIN screen a solid 2 seconds to initialize its OS layout completely
+    R_BSP_SoftwareDelay(2, BSP_DELAY_UNITS_SECONDS);
+
+    while(1)
+    {
+        num++;
+        // 3. Clear callback check flag and fire the data frame out
+        uart_tx_complete = false;
+        if(num%3 == 0)
+        {
+          command[15] = 0x00;
+        }
+        else if(num%7 == 0)
+        {
+            command[15] = 0x00;
+        }
+
+        R_SCI_UART_Write(&g_uart4_ctrl, command, sizeof(command));
+
+        // Wait here transparently for the hardware UART shift registers to empty safely
+        // This ensures frames never stomp on top of each other
+        while (!uart_tx_complete)
+        {
+            // Optional timeout safety loop can be added here if needed
+        }
+
+        // Control scrolling speed / step width across your layout grid
+        R_BSP_SoftwareDelay(1000, BSP_DELAY_UNITS_MILLISECONDS);
+    }
+
+#if BSP_TZ_SECURE_BUILD
+    R_BSP_NonSecureEnter();
+#endif
+}
+
+void R_BSP_WarmStart(bsp_warm_start_event_t event)
+{
+    if (BSP_WARM_START_RESET == event)
+    {
+#if BSP_FEATURE_FLASH_LP_VERSION != 0
+        /* Enable reading from data flash. */
+        R_FACI_LP->DFLCTL = 1U;
+#endif
+    }
+
+    if (BSP_WARM_START_POST_C == event)
+    {
+        /* Configure pins. */
+        R_IOPORT_Open (&g_ioport_ctrl, g_ioport.p_cfg);
+    }
+}

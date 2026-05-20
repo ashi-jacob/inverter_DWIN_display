@@ -1,0 +1,13 @@
+/*
+ * bar_graph.c
+ *
+ *  Created on: 20-May-2026
+ *      Author: ashithajacob
+ */
+
+
+#include "hal_data.h"
+#include "bar_graph.h"
+
+
+static void dwin_display_

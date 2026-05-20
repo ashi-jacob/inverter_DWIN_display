@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;inverter_display/src/value&apos;" deleteContents="false" description="Delete resource &apos;inverter_display/src/value&apos;" element1="/inverter_display/src/value" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1779262766999"/>&#x0A;<refactoring comment="Delete resource &apos;inverter_display/src/bar&apos;" deleteContents="false" description="Delete resource &apos;inverter_display/src/bar&apos;" element1="/inverter_display/src/bar" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1779262872425"/>
+</session>
